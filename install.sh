@@ -1,14 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Variables
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-    CYGWIN*)    machine=Cygwin;;
-    MINGW*)     machine=MinGw;;
-    *)          echo "${unameOut} is not a supported dotfile environment" && exit 1;;
+PROJECT_DIR=$HOME/projects/personal
+UNAME_OUT="$(uname -s)"
+case "${UNAME_OUT}" in
+    Linux*) OS=Linux ;;
+    Darwin*) OS=Mac ;;
+    CYGWIN*) OS=Cygwin ;;
+    MINGW*) OS=MinGw ;;
+    *) echo "${UNAME_OUT} is not a supported dotfile environment" && exit 1 ;;
 esac
+
+# Create directories
+mkdir -p $PROJECT_DIR
 
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
@@ -18,15 +22,21 @@ else
     echo -e "\xE2\x9C\x97 Install Homebrew [failed]"
 fi
 
-# Setup Homebrew
-brew analytics off
+# Install GIT
 brew update
-brew tap homebrew/bundle
-brew bundle
+brew install git
 
 # Clone repository
-
+mkdir -p $PROJECT_DIR
+git clone https://github.com/drieshooghe/dotfiles.git $PROJECT_DIR/dotfiles
+cd $PROJECT_DIR/dotfiles
 
 # Import utils
-# source ./utils/prompt.sh
+source ./utils/prompt.sh
 
+# brew analytics off
+# brew install git
+
+# Setup Homebrew
+# brew tap homebrew/bundle
+# brew bundle
