@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Import utils
-source ./utils/prompt.sh
-
 # Variables
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -15,5 +12,21 @@ esac
 
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-logResult "Install Homebrew"
+if [ $? -eq 0 ]; then
+    echo -e "\xE2\x9C\x94 Install Homebrew [successful]"
+else
+    echo -e "\xE2\x9C\x97 Install Homebrew [failed]"
+fi
+
+# Setup Homebrew
+brew analytics off
+brew update
+brew tap homebrew/bundle
+brew bundle
+
+# Clone repository
+
+
+# Import utils
+# source ./utils/prompt.sh
 
