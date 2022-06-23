@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Determine OS
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -9,4 +10,5 @@ case "${unameOut}" in
     *)          echo "${unameOut} is not a supported dotfile environment" && exit 1;;
 esac
 
-echo $machine
+# Install Homebrew
+source <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
