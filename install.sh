@@ -15,9 +15,9 @@ fi
 # Variables
 PROJECT_DIR=$HOME/projects/personal
 case $(uname -s) in
-    Linux*) OS=Linux ;;
-    Darwin*) OS=Mac ;;
-    *) echo "$(uname -s) is not a supported dotfile environment" && exit 1 ;;
+Linux*) OS=Linux ;;
+Darwin*) OS=Mac ;;
+*) echo "$(uname -s) is not a supported dotfile environment" && exit 1 ;;
 esac
 
 # Create directories
@@ -33,9 +33,6 @@ brew update
 mkdir -p $PROJECT_DIR
 git clone https://github.com/drieshooghe/dotfiles.git $PROJECT_DIR/dotfiles
 cd $PROJECT_DIR/dotfiles
-
-# Import utils
-source ./utils/prompt.sh
 
 # Setup Homebrew
 brew tap homebrew/bundle
