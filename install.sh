@@ -2,6 +2,9 @@
 set -u
 
 # Functions
+success() {
+    echo -e "\xE2\x9C\x94 $1" >&2
+}
 abort() {
     echo -e "\xE2\x9C\x97 $1" >&2
     exit 1
@@ -25,7 +28,7 @@ mkdir -p $PROJECT_DIR
 
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-echo -e "\xE2\x9C\x94 Homebrew installation successful"
+success "Homebrew installation successful"
 brew analytics off
 brew update
 
@@ -33,7 +36,12 @@ brew update
 mkdir -p $PROJECT_DIR
 git clone https://github.com/drieshooghe/dotfiles.git $PROJECT_DIR/dotfiles
 cd $PROJECT_DIR/dotfiles
+success "Cloned dotfiles repository"
 
 # Setup Homebrew
 brew tap homebrew/bundle
 brew bundle
+
+# Setup node version
+n lts
+success "Installed Node"
