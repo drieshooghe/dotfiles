@@ -46,5 +46,5 @@ cask 'vanilla'
 cask 'visual-studio-code'
 cask 'vlc'
 
-mas 'Affinity Designer', id: 824171161
-mas 'Affinity Photo', id: 824183456
+mas 'Affinity Designer', id: 824171161 unless system "[ ! - d '/home/runner' ] || { exit 1; }"
+mas 'Affinity Photo', id: 824183456 unless system "[ ! - d '/home/runner' ] || { exit 1; }"
