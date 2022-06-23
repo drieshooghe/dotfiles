@@ -10,11 +10,5 @@ jobs:
         os: [ubuntu-latest, macOS-latest]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Lint
-        uses: azohra/shell-linter@latest
-
       - name: Test
-        run: ./bootstrap.sh
+        run: source <(curl -s https://raw.githubusercontent.com/drieshooghe/dotfiles/master/bootstrap.sh)
