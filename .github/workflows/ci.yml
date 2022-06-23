@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Test
-        run: source <(curl -s https://raw.githubusercontent.com/drieshooghe/dotfiles/master/install.sh)
+        run: source <(curl -s https://raw.githubusercontent.com/drieshooghe/dotfiles/HEAD/install.sh)

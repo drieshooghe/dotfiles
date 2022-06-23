@@ -1,14 +1,23 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -u
+
+# Functions
+abort() {
+    echo -e "\xE2\x9C\x97 $1" >&2
+    exit 1
+}
+
+# Checks
+if [ -z "${BASH_VERSION:-}" ]; then
+    abort "Bash is required to interpret this script."
+fi
 
 # Variables
 PROJECT_DIR=$HOME/projects/personal
-UNAME_OUT="$(uname -s)"
-case "${UNAME_OUT}" in
+case $(uname -s) in
     Linux*) OS=Linux ;;
     Darwin*) OS=Mac ;;
-    CYGWIN*) OS=Cygwin ;;
-    MINGW*) OS=MinGw ;;
-    *) echo "${UNAME_OUT} is not a supported dotfile environment" && exit 1 ;;
+    *) echo "$(uname -s) is not a supported dotfile environment" && exit 1 ;;
 esac
 
 # Create directories
@@ -16,15 +25,9 @@ mkdir -p $PROJECT_DIR
 
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
-if [ $? -eq 0 ]; then
-    echo -e "\xE2\x9C\x94 Install Homebrew [successful]"
-else
-    echo -e "\xE2\x9C\x97 Install Homebrew [failed]"
-fi
-
-# Install GIT
+echo -e "\xE2\x9C\x94 Homebrew installation successful"
+brew analytics off
 brew update
-brew install git
 
 # Clone repository
 mkdir -p $PROJECT_DIR
@@ -34,9 +37,6 @@ cd $PROJECT_DIR/dotfiles
 # Import utils
 source ./utils/prompt.sh
 
-# brew analytics off
-# brew install git
-
 # Setup Homebrew
-# brew tap homebrew/bundle
-# brew bundle
+brew tap homebrew/bundle
+brew bundle
