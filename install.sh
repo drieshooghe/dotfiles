@@ -45,3 +45,6 @@ brew bundle
 # Setup node version
 n lts
 success "Installed Node"
+
+# Symlink config files
+ln -s ./config $HOME/.config
