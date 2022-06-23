@@ -1,0 +1,21 @@
+name: CI dotfiles
+
+on: push
+
+jobs:
+  test:
+		strategy:
+					matrix:
+						os: [ubuntu-latest, macos-latest]
+		runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Lint
+        uses: azohra/shell-linter@latest
+
+      - name: Test
+        run: bootstrap.sh
+
