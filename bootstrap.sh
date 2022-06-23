@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Determine OS
+# Import utils
+source ./utils/prompt.sh
+
+# Variables
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -11,4 +14,6 @@ case "${unameOut}" in
 esac
 
 # Install Homebrew
-source <(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+logResult "Install Homebrew"
+
