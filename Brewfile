@@ -14,10 +14,11 @@ brew 'git'
 brew 'gitmoji'
 brew 'go'
 brew 'mackup'
+brew 'n' # Node version manager
 brew 'neovim'
-brew 'n'
 brew 'openssh'
 brew 'pnpm'
+brew 'pyenv' # Python version manager
 brew 'rustup'
 brew 'starship'
 brew 'trash'
