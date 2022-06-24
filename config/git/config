@@ -1,0 +1,12 @@
+[user]
+    name = Dries Hooghe
+
+[core]
+    editor = nvim
+    excludesfile = ~/.config/git/ignore
+
+[includeIf "gitdir/i:~/projects/personal"]
+    path = ~/.config/git/config_personal
+
+[includeIf "gitdir/i:~/projects/work"]
+    path = ~/.config/git/config_work
