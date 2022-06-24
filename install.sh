@@ -26,6 +26,10 @@ esac
 # Create directories
 mkdir -p $PROJECT_DIR
 
+# Symlink config files
+ln -s ./src/config $HOME/.config
+ln -s ./src/bashrc $HOME/.bashrc
+
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
 success "Homebrew installation successful"
@@ -45,7 +49,3 @@ brew bundle
 # Setup node version
 n lts
 success "Installed Node"
-
-# Symlink config files
-ln -s ./src/config $HOME/.config
-ln -s ./src/bashrc $HOME/.bashrc
