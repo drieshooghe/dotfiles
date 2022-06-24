@@ -47,4 +47,5 @@ n lts
 success "Installed Node"
 
 # Symlink config files
-ln -s ./config $HOME/.config
+ln -s ./src/config $HOME/.config
+ln -s ./src/bashrc $HOME/.bashrc
