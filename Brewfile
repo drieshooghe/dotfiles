@@ -28,6 +28,8 @@ brew 'z'
 
 # Apps
 cask '1password'
+cask 'affinity-designer'
+cask 'affinity-photo'
 cask 'alacritty'
 cask 'docker'
 cask 'enpass'
@@ -45,6 +47,3 @@ cask 'the-unarchiver'
 cask 'vanilla'
 cask 'visual-studio-code'
 cask 'vlc'
-
-mas 'Affinity Designer', id: 824171161 unless system "[ ! - d '/home/runner' ] || { exit 1; }"
-mas 'Affinity Photo', id: 824183456 unless system "[ ! - d '/home/runner' ] || { exit 1; }"
