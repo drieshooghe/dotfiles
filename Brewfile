@@ -14,7 +14,6 @@ brew 'git'
 brew 'gitmoji'
 brew 'go'
 brew 'mackup'
-brew 'n' # Node version manager
 brew 'neovim'
 brew 'openssh'
 brew 'pnpm'
