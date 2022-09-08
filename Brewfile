@@ -8,6 +8,8 @@ tap 'homebrew/cask-fonts'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'colima'
+brew 'docker'
 brew 'docker-compose'
 brew 'gh'
 brew 'git'
