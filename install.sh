@@ -29,6 +29,7 @@ mkdir -p $PROJECT_DIR
 # Symlink config files
 ln -s ./src/config $HOME/.config
 ln -s ./src/bashrc $HOME/.bashrc
+ln -s ./src/bash_profile $HOME/.bash_profile
 
 # Install Homebrew
 source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
