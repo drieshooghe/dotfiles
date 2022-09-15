@@ -7,10 +7,10 @@ tap 'homebrew/cask-fonts'
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
-brew 'coreutils' # Those that come with macOS are outdated
 brew 'colima'
-brew 'docker'
+brew 'coreutils' # Those that come with macOS are outdated
 brew 'docker-compose'
+brew 'docker'
 brew 'gh'
 brew 'git'
 brew 'gitmoji'
@@ -21,6 +21,7 @@ brew 'pyenv' # Python version manager
 brew 'rustup'
 brew 'starship'
 brew 'trash'
+brew 'unar'
 brew 'wget'
 brew 'yarn'
 brew 'z'
@@ -42,7 +43,5 @@ cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'tableplus'
-cask 'unar'
 cask 'vanilla'
 cask 'visual-studio-code'
-cask 'vlc'
