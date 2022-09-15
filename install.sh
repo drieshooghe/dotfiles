@@ -30,9 +30,9 @@ cd $PROJECT_DIR/dotfiles
 success "Cloned dotfiles repository"
 
 # Symlink config files
-ln -s ./src/config $HOME/.config
-ln -s ./src/bashrc $HOME/.bashrc
-ln -s ./src/bash_profile $HOME/.bash_profile
+ln -s $PROJECT_DIR/dotfiles/src/config $HOME/.config
+ln -s $PROJECT_DIR/dotfiles/src/bashrc $HOME/.bashrc
+ln -s $PROJECT_DIR/dotfiles/src/bash_profile $HOME/.bash_profile
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
