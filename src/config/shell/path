@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+
+# User bin
+export PATH="$PATH:$HOME/bin"
+
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# PNPM
+export PNPM_HOME="$HOME/Library/pnpm"

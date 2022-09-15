@@ -6,7 +6,6 @@ tap 'homebrew/cask-fonts'
 
 # Binaries
 brew 'awscli'
-brew 'bash' # Latest Bash version
 brew 'colima'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'docker-compose'

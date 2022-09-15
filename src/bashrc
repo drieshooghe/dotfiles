@@ -1,4 +1,0 @@
-eval "$(starship init bash)"
-
-export PNPM_HOME="/Users/dries/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"

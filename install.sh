@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 set -u
 
 # Functions
@@ -11,8 +11,8 @@ abort() {
 }
 
 # Checks
-if [ -z "${BASH_VERSION:-}" ]; then
-    abort "Bash is required to interpret this script."
+if [ -z "${ZSH_VERSION:-}" ]; then
+    abort "Zsh is required to interpret this script."
 fi
 
 # Variables
@@ -31,11 +31,11 @@ success "Cloned dotfiles repository"
 
 # Symlink config files
 ln -s $PROJECT_DIR/dotfiles/src/config $HOME/.config
-ln -s $PROJECT_DIR/dotfiles/src/bashrc $HOME/.bashrc
-ln -s $PROJECT_DIR/dotfiles/src/bash_profile $HOME/.bash_profile
+ln -s $PROJECT_DIR/dotfiles/src/zshrc $HOME/.zshrc
+ln -s $PROJECT_DIR/dotfiles/src/zprofile $HOME/.zprofile
 
 # Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 success "Homebrew installation successful"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew analytics off

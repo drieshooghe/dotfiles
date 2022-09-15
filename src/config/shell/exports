@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+
+# Make neovim the default editor.
+export EDITOR='nvim';
+
+# Increase Zsh history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+# Immediately append commands to the history
+setopt INC_APPEND_HISTORY
+# Add a timestamp to the history
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Export the dotfiles directory path
+export DOTFILES="${HOME}/projects/personal/dotfiles";

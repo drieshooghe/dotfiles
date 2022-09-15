@@ -1,14 +1,14 @@
 name: CI dotfiles
 
-on: push
+# on: push
 
-jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
+# jobs:
+#   test:
+#     runs-on: ${{ matrix.os }}
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, macOS-latest]
 
-    steps:
-      - name: Test
-        run: curl -s https://raw.githubusercontent.com/drieshooghe/dotfiles/HEAD/install.sh | bash
+#     steps:
+#       - name: Test
+#         run: curl -s https://raw.githubusercontent.com/drieshooghe/dotfiles/HEAD/install.sh | zsh

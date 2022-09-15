@@ -3,6 +3,6 @@
 **On mac:**
 Have xcode installed with
 
-```bash
+```zsh
 xcode-select --install
 ```
