@@ -43,7 +43,3 @@ brew update
 # Setup Homebrew
 brew tap homebrew/bundle
 brew bundle
-
-# Setup node version
-n lts
-success "Installed Node"
