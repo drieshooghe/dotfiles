@@ -23,8 +23,11 @@ Darwin*) OS=Mac ;;
 *) echo "$(uname -s) is not a supported dotfile environment" && exit 1 ;;
 esac
 
-# Create directories
+# Clone repository
 mkdir -p $PROJECT_DIR
+git clone https://github.com/drieshooghe/dotfiles.git $PROJECT_DIR/dotfiles
+cd $PROJECT_DIR/dotfiles
+success "Cloned dotfiles repository"
 
 # Symlink config files
 ln -s ./src/config $HOME/.config
@@ -36,12 +39,6 @@ source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install
 success "Homebrew installation successful"
 brew analytics off
 brew update
-
-# Clone repository
-mkdir -p $PROJECT_DIR
-git clone https://github.com/drieshooghe/dotfiles.git $PROJECT_DIR/dotfiles
-cd $PROJECT_DIR/dotfiles
-success "Cloned dotfiles repository"
 
 # Setup Homebrew
 brew tap homebrew/bundle
