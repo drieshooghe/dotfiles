@@ -35,7 +35,7 @@ ln -s ./src/bashrc $HOME/.bashrc
 ln -s ./src/bash_profile $HOME/.bash_profile
 
 # Install Homebrew
-source <(curl -s https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 success "Homebrew installation successful"
 brew analytics off
 brew update
