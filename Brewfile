@@ -28,7 +28,7 @@ brew 'z'
 
 
 # Apps
-cask '1password'
+# cask '1password'
 cask 'affinity-designer'
 cask 'affinity-photo'
 cask 'alacritty'
@@ -39,7 +39,7 @@ cask 'mongodb-compass'
 cask 'nordvpn'
 cask 'notion'
 cask 'session-manager-plugin'
-cask 'slack'
+# cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'tableplus'
