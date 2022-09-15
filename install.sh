@@ -37,6 +37,7 @@ ln -s $PROJECT_DIR/dotfiles/src/bash_profile $HOME/.bash_profile
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 success "Homebrew installation successful"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew analytics off
 brew update
 
