@@ -1,2 +1,9 @@
 #!/usr/bin/zsh
 
+success() {
+    echo -e "\xE2\x9C\x94 $1" >&2
+}
+abort() {
+    echo -e "\xE2\x9C\x97 $1" >&2
+    exit 1
+}
