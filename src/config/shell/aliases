@@ -8,6 +8,10 @@ alias localip='ipconfig getifaddr en0'
 
 # ___Shell tools___
 alias reload='exec ${SHELL} -l'
+alias clean=' \
+	docker system prune -f --filter "until=2160h" && success "Cleared docker files" ; \
+	yarn cache clean --mirror && success "Cleared yarn cache" ; \
+	pnpm store prune && success "Cleared pnpm cache"'
 
 # ___Applications___
 alias safari='open -a Safari'
