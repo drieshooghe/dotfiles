@@ -1,12 +1,20 @@
 [user]
-    name = Dries Hooghe
+	name = Dries Hooghe
+    email = dries@drieshooghe.com
 
 [core]
     editor = nvim
     excludesfile = ~/.config/git/ignore
+
+[init]
+    defaultBranch = master
 
 [includeIf "gitdir/i:~/projects/personal"]
     path = ~/.config/git/config_personal
 
 [includeIf "gitdir/i:~/projects/work"]
     path = ~/.config/git/config_work
+
+[apply]
+	# Detect whitespace errors when applying a patch.
+	whitespace = fix
