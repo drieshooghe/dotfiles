@@ -7,3 +7,38 @@ abort() {
     echo -e "\xE2\x9C\x97 $1" >&2
     exit 1
 }
+
+kp() {
+    readonly port=${1:?"The port must be specified."}
+
+    lsof -i tcp:"$port" | grep LISTEN | awk '{print $2}' | xargs kill -9
+}
+
+load_staging_db() {
+    readonly dump_location="/Users/dries/projects/work/python/docker/docker_fs/mongo-backup/dump"
+    readonly connection_string=${1:?"The db connection string must be specified."}
+    declare -a COLLECTIONS_TO_SYNC
+    COLLECTIONS_TO_SYNC=(
+        "cheqroom_2_0"
+        "sample_av_equipment_673bdc66v2_5"
+        "university_of_waereghem_dd467b15"
+        "waereghem_elementary_5d546266"
+    )
+    declare -r COLLECTIONS_TO_SYNC
+
+    if [ -n "$(ls -A $dump_location)" ]; then
+        echo "Clearing old dumps"
+        rm -rvf $dump_location/*
+    fi
+
+    for collection in "${COLLECTIONS_TO_SYNC[@]}"; do
+        echo "Syncing $collection"
+        mongodump --uri "$connection_string/$collection" --out "$dump_location"
+    done
+
+    cd $dump_location
+    for collection in "${COLLECTIONS_TO_SYNC[@]}"; do
+        echo "Restoring $collection"
+        docker-compose exec mongodb mongorestore --drop --db=$collection /backup/dump/$collection
+    done
+}
