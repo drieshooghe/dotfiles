@@ -1,3 +1,11 @@
 [ -n "$PS1" ] && source ~/.zprofile;
 
 eval "$(starship init zsh)"
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/dries/projects/personal/ocoda/templating/node_modules/.pnpm/tabtab@2.2.2/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/dries/projects/personal/ocoda/templating/node_modules/.pnpm/tabtab@2.2.2/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/dries/projects/personal/ocoda/templating/node_modules/.pnpm/tabtab@2.2.2/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/dries/projects/personal/ocoda/templating/node_modules/.pnpm/tabtab@2.2.2/node_modules/tabtab/.completions/sls.zsh
+
+eval "$(rbenv init - zsh)"

@@ -63,7 +63,7 @@ alias gcma='git commit --amend'
 alias gcmane='git commit --amend --no-edit'
 alias gcb='git checkout -b'
 alias gc='git checkout'
-alias gbl='git branch -l'
+alias gbl='git branch --sort=-committerdate -l'
 alias gbd='git branch -D'
 alias gbdp='git branch -D $(git name-rev @{-1} --name-only | sed "s:.*/::")'
 alias gbda='git checkout master && git branch | grep -v "^*" | xargs git branch -D'
@@ -120,3 +120,6 @@ alias dkl='docker ps'
 # ___Dev tools___
 alias gms='gitmoji --search'
 alias nms='du -sh ./node_modules/* | sort -nr | grep "\dM.*"' # Check size of node_modules
+alias python='python3'
+alias python-env="source /Users/dries/projects/work/python/.venv/bin/activate && export PYTHONPATH=/Users/dries/projects/work/python"
+

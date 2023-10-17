@@ -32,13 +32,12 @@ load_staging_db() {
     fi
 
     for collection in "${COLLECTIONS_TO_SYNC[@]}"; do
-        echo "Syncing $collection"
-        mongodump --uri "$connection_string/$collection" --out "$dump_location"
+       echo "Syncing $collection"
+       mongodump --uri "$connection_string/$collection" --archive > $dump_location/$collection.dump
     done
 
-    cd $dump_location
     for collection in "${COLLECTIONS_TO_SYNC[@]}"; do
         echo "Restoring $collection"
-        docker-compose exec mongodb mongorestore --drop --db=$collection /backup/dump/$collection
+        $(cd $dump_location && docker-compose exec -T mongodb sh -c "mongorestore --uri \"mongodb://localhost:27017/?directConnection=true\" --drop --archive < /backup/dump/$collection.dump")
     done
 }

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ios-deploy": "^1.12.1"
+  }
+}

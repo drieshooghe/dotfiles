@@ -1,6 +1,11 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# ZSH settings
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+
 # Load the shell dotfiles
 for file in ~/.config/shell/{path,exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -25,3 +30,8 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Enable Z tab completion
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
+
+# Setting PATH for Python 2.7
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
