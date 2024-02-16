@@ -73,8 +73,8 @@ alias gb='git checkout -'
 alias grh='git reset --soft HEAD^1'
 
 # ___Github___
-alias ghprc='gh pr create --assignee drieshooghe --label="team red"'
-alias ghprcd='gh pr create --draft --assignee drieshooghe --label="team red"'
+alias ghprc='gh pr create --assignee drieshooghe'
+alias ghprcd='gh pr create --draft --assignee drieshooghe'
 alias ghpra='gh pr list --label dependencies | cut -f 1 | xargs -I{} gh pr review {} --approve'
 alias ghbs='open -a safari https://www.github.com/CHEQROOM/services'
 alias ghbw='open -a safari https://www.github.com/CHEQROOM/web'
@@ -120,6 +120,3 @@ alias dkl='docker ps'
 # ___Dev tools___
 alias gms='gitmoji --search'
 alias nms='du -sh ./node_modules/* | sort -nr | grep "\dM.*"' # Check size of node_modules
-alias python='python3'
-alias python-env="source /Users/dries/projects/work/python/.venv/bin/activate && export PYTHONPATH=/Users/dries/projects/work/python"
-
